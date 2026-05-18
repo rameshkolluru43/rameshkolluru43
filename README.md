@@ -26,10 +26,50 @@ Computational fluid dynamics scientist with **20+ years** of experience across c
 | Area | Topics |
 |------|--------|
 | **CFD & HPC** | Immersed boundary methods, CUDA / Metal kernels, Poisson & Laplace solvers, OpenFOAM |
-| **Marine & environmental** | Ship exhaust dispersion, CMC / ISRN micromixing, naval architecture & propulsion |
+| **Marine & environmental** | Ship line heating, exhaust dispersion (ISRN/CMC), Gaussian plume baselines, naval architecture & propulsion |
 | **Optimization** | Hybrid gradient / metaheuristic solvers coupled with in-house CFD (scramjet inlet design, etc.) |
 | **Teaching** | *Python for Marine Engineering* — 2-semester LaTeX course (2026): numerics, pandas, marine KPIs, propulsion & condition monitoring |
 | **Numerical methods** | GMRES, spectral & orthogonal basis functions, tensor-train linear algebra |
+
+---
+
+## Marine & ship modeling
+
+### 🔥 Ship line heating (3D thermo-mechanics)
+
+Coupled **transient heat transfer + thermoelasticity** workflow for **ship-plate line heating** and permanent bending:
+
+- **Forward problem:** prescribed torch temperature (e.g. 900 K) → predicted curvature profile
+- **Inverse problem:** target curvature + plate geometry → optimal heating pattern
+- **Numerics:** Gmsh tetrahedral mesh (refined along heating lines), moving Gaussian surface heat flux, convection/radiation, 3D linear thermoelasticity (`thermo_bindings`), optional **inherent-strain** surrogate for residual bend
+- **Outputs:** VTK (ParaView), plots, LaTeX/PDF reports; optional PINN paths (DeepXDE / Modulus)
+
+### 🚢 Ship pollution — ISRN & CMC
+
+**In-Situ Reaction Network (ISRN)** with **Conditional Moment Closure (CMC)** for ship-exhaust and atmospheric reacting flows, integrated with [**CONVERGE**](https://convergecfd.com/) CFD:
+
+- Fortran production library + **C++ port** (Eigen, MPI, HDF5 restart) and unified Doxygen docs
+- Resolves **micromixing** and fast chemistry (e.g. **NO, NO₂, SO₄**) behind large marine sources—beyond mean-field assumptions
+- Application context: pollutant dispersion in the wake of a **~270 m oil tanker** (Cambridge CARES); CONVERGE UDF workflow for plume analysis with RANS/LES and detailed chemistry
+
+### 🌫️ Gaussian plume modeling
+
+Atmospheric **Gaussian plume** dispersion software used as a **regulatory / screening baseline** and for **manuscript comparison** against high-fidelity models:
+
+- Reflected-ground point source: Pasquill–Gifford & **Briggs** σ models (class D stability)
+- Computes mass concentration **C** [kg/m³] and passive scalar **ξ = C/ρ_source** for direct comparison with CFD/CMC/ISRN fields
+- Python CLI + Tkinter GUI: contours, crosswind/vertical profiles, skewed-wind receptors, literature benchmark cases
+- Validates when classical plume theory is sufficient vs. when **CMC/ISRN micromixing** and 3D CFD are required
+
+```mermaid
+flowchart LR
+  A[Ship exhaust / stack] --> B[Gaussian plume baseline]
+  A --> C[CONVERGE CFD + ISRN/CMC]
+  B --> D[Screening & ξ comparison]
+  C --> D
+  E[Line heating torch] --> F[3D thermo-FEM]
+  F --> G[Plate curvature forward / inverse]
+```
 
 ---
 
@@ -79,8 +119,8 @@ Computational fluid dynamics scientist with **20+ years** of experience across c
 
 - 🌱 GPU porting and kernel tuning (CUDA ↔ Metal)
 - 🔬 Quantum-enhanced CFD workflows at BQP
-- 👯 Collaborations on **open CFD**, **marine propulsion**, and **environmental dispersion** modeling
-- 💬 Happy to discuss **IBM**, **CMC/ISRN**, **Poisson solvers**, **GMRES**, and **HPC profiling**
+- 👯 Collaborations on **ship line heating**, **ISRN/CMC ship pollution**, **Gaussian plume baselines**, and **marine propulsion**
+- 💬 Happy to discuss **line-heating FEM**, **CMC/ISRN**, **CONVERGE UDFs**, **Poisson solvers**, **GMRES**, and **HPC profiling**
 
 ---
 
