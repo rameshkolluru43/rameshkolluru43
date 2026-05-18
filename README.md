@@ -139,9 +139,12 @@ flowchart LR
   <a href="https://scholar.google.co.in/citations?user=Zzl8hbwAAAAJ&hl=en">
     <img src="https://img.shields.io/badge/Google_Scholar-Publications-4285F4?style=for-the-badge&logo=google-scholar&logoColor=white" alt="Google Scholar"/>
   </a>
+  <a href="https://orcid.org/0000-0001-5447-8550">
+    <img src="https://img.shields.io/badge/ORCID-0000--0001--5447--8550-A6CE39?style=for-the-badge&logo=orcid&logoColor=white" alt="ORCID"/>
+  </a>
 </p>
 
-📫 **rameshkolluru43@gmail.com** · [LinkedIn](https://www.linkedin.com/in/drrameshkolluru) · [Google Scholar](https://scholar.google.co.in/citations?user=Zzl8hbwAAAAJ&hl=en)
+📫 **rameshkolluru43@gmail.com** · [LinkedIn](https://www.linkedin.com/in/drrameshkolluru) · [Google Scholar](https://scholar.google.co.in/citations?user=Zzl8hbwAAAAJ&hl=en) · [ORCID 0000-0001-5447-8550](https://orcid.org/0000-0001-5447-8550)
 
 ---
 
