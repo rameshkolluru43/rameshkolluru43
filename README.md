@@ -16,7 +16,6 @@ Computational fluid dynamics scientist with **20+ years** of experience across c
 - 🔭 **Current focus:** viscous flows, immersed-boundary methods, GPU Poisson/CFD solvers, and quantum-enhanced numerics (CVQLS, QAPINN)
 - 🧮 **Methods:** GMRES, finite-volume / finite-difference schemes, CMC & ISRN for turbulent reacting flows, MPI-parallel CFD
 - 🏢 **BQP** — quantum-powered physics simulation & optimization ([BosonQ Psi](https://www.linkedin.com/company/bosonq-psi))
-- 📍 **Sagar, India**
 - 🎓 **Background:** Cambridge CARES (Research Fellow) · IISc (Postdoc) · B.M.S. College of Engineering (Faculty) · IIT Madras (Research Scholar)
 
 ---
